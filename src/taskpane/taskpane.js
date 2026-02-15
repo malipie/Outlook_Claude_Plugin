@@ -350,7 +350,13 @@ async function callLLM(email, extraContext) {
   const style = localStorage.getItem(STORAGE_KEYS.style) || "";
 
   const systemPrompt = buildSystemPrompt(savedSystem, style, extraContext);
-  const userMessage = `From: ${email.from} <${email.fromEmail}>\nSubject: ${email.subject}\n\n${email.body}`;
+
+  // Trim email body to ~4000 chars to save tokens on long threads
+  const MAX_BODY = 4000;
+  const trimmedBody = email.body.length > MAX_BODY
+    ? email.body.slice(0, MAX_BODY) + "\n\n[... reszta wątku obcięta]"
+    : email.body;
+  const userMessage = `From: ${email.from} <${email.fromEmail}>\nSubject: ${email.subject}\n\n${trimmedBody}`;
 
   const { url, headers, body } = provider.buildRequest(apiKey, model, systemPrompt, userMessage);
 
