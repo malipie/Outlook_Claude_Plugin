@@ -5,19 +5,18 @@
     xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
     xsi:type="MailApp">
 
-    <!-- IMPORTANT: Replace GITHUB_USERNAME with your GitHub username -->
     <Id>e1d3c9a0-4b5f-4e8a-9c2d-7f6b8a3e1d0c</Id>
     <Version>1.0.0.0</Version>
     <ProviderName>AI Mail Assistant</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="AI Mail Assistant"/>
     <Description DefaultValue="Generate email replies using AI (Claude, GPT, Gemini) in your personal writing style"/>
-    <IconUrl DefaultValue="https://GITHUB_USERNAME.github.io/ai-mail-assistant/assets/icon-64.png"/>
-    <HighResolutionIconUrl DefaultValue="https://GITHUB_USERNAME.github.io/ai-mail-assistant/assets/icon-128.png"/>
-    <SupportUrl DefaultValue="https://github.com/GITHUB_USERNAME/ai-mail-assistant"/>
+    <IconUrl DefaultValue="https://malipie.github.io/ai-mail-assistant/assets/icon-64.png"/>
+    <HighResolutionIconUrl DefaultValue="https://malipie.github.io/ai-mail-assistant/assets/icon-128.png"/>
+    <SupportUrl DefaultValue="https://github.com/malipie/ai-mail-assistant"/>
 
     <AppDomains>
-        <AppDomain>https://GITHUB_USERNAME.github.io</AppDomain>
+        <AppDomain>https://malipie.github.io</AppDomain>
     </AppDomains>
 
     <Hosts>
@@ -33,7 +32,7 @@
     <FormSettings>
         <Form xsi:type="ItemRead">
             <DesktopSettings>
-                <SourceLocation DefaultValue="https://GITHUB_USERNAME.github.io/ai-mail-assistant/taskpane.html"/>
+                <SourceLocation DefaultValue="https://malipie.github.io/ai-mail-assistant/taskpane.html"/>
                 <RequestedHeight>450</RequestedHeight>
             </DesktopSettings>
         </Form>
@@ -102,12 +101,12 @@
 
             <Resources>
                 <bt:Images>
-                    <bt:Image id="icon16" DefaultValue="https://GITHUB_USERNAME.github.io/ai-mail-assistant/assets/icon-16.png"/>
-                    <bt:Image id="icon32" DefaultValue="https://GITHUB_USERNAME.github.io/ai-mail-assistant/assets/icon-32.png"/>
-                    <bt:Image id="icon80" DefaultValue="https://GITHUB_USERNAME.github.io/ai-mail-assistant/assets/icon-80.png"/>
+                    <bt:Image id="icon16" DefaultValue="https://malipie.github.io/ai-mail-assistant/assets/icon-16.png"/>
+                    <bt:Image id="icon32" DefaultValue="https://malipie.github.io/ai-mail-assistant/assets/icon-32.png"/>
+                    <bt:Image id="icon80" DefaultValue="https://malipie.github.io/ai-mail-assistant/assets/icon-80.png"/>
                 </bt:Images>
                 <bt:Urls>
-                    <bt:Url id="taskpaneUrl" DefaultValue="https://GITHUB_USERNAME.github.io/ai-mail-assistant/taskpane.html"/>
+                    <bt:Url id="taskpaneUrl" DefaultValue="https://malipie.github.io/ai-mail-assistant/taskpane.html"/>
                 </bt:Urls>
                 <bt:ShortStrings>
                     <bt:String id="groupLabel" DefaultValue="AI Mail"/>

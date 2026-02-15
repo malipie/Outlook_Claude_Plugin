@@ -16,7 +16,7 @@ Add-in do Outlooka, który generuje odpowiedzi na maile przy użyciu AI
 
 1. Sklonuj repo i zainstaluj zależności:
    ```
-   git clone https://github.com/TWOJ_USERNAME/ai-mail-assistant.git
+   git clone https://github.com/malipie/ai-mail-assistant.git
    cd ai-mail-assistant
    npm install
    ```
@@ -56,12 +56,12 @@ Gdy add-in działa poprawnie na localhost, wrzuć go na GitHub Pages:
    ```
    git add .
    git commit -m "initial commit"
-   git remote add origin https://github.com/TWOJ_USERNAME/ai-mail-assistant.git
+   git remote add origin https://github.com/malipie/ai-mail-assistant.git
    git push -u origin main
    ```
 
 6. GitHub Actions automatycznie zbuduje i wdroży na:
-   `https://TWOJ_USERNAME.github.io/ai-mail-assistant/`
+   `https://malipie.github.io/ai-mail-assistant/`
 
 7. W Outlooku usuń stary add-in (localhost) i zainstaluj nowy
    z pliku manifest.production.xml

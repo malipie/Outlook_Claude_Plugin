@@ -2,7 +2,7 @@
   "name": "ai-mail-assistant",
   "version": "2.0.0",
   "description": "Outlook Add-in — AI email response generator (Claude, GPT, Gemini)",
-  "homepage": "https://GITHUB_USERNAME.github.io/ai-mail-assistant/",
+  "homepage": "https://malipie.github.io/ai-mail-assistant/",
   "private": true,
   "scripts": {
     "dev": "webpack serve --mode development",
