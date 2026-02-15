@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Mail Assistant</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header id="header">
+      <div class="header-left">
+        <img src="assets/icon-32.png" alt="" class="header-icon"/>
+        <h1>AI Mail</h1>
+      </div>
+      <button id="btn-settings" class="icon-btn" title="Ustawienia">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M16.2 12.2a1.4 1.4 0 00.28 1.54l.05.05a1.7 1.7 0 11-2.4 2.4l-.05-.05a1.4 1.4 0 00-1.54-.28 1.4 1.4 0 00-.84 1.28v.14a1.7 1.7 0 11-3.4 0v-.07a1.4 1.4 0 00-.92-1.28 1.4 1.4 0 00-1.54.28l-.05.05a1.7 1.7 0 11-2.4-2.4l.05-.05a1.4 1.4 0 00.28-1.54 1.4 1.4 0 00-1.28-.84H2.3a1.7 1.7 0 110-3.4h.07a1.4 1.4 0 001.28-.92 1.4 1.4 0 00-.28-1.54l-.05-.05a1.7 1.7 0 112.4-2.4l.05.05a1.4 1.4 0 001.54.28h.07a1.4 1.4 0 00.84-1.28V2.3a1.7 1.7 0 113.4 0v.07a1.4 1.4 0 00.84 1.28 1.4 1.4 0 001.54-.28l.05-.05a1.7 1.7 0 112.4 2.4l-.05.05a1.4 1.4 0 00-.28 1.54v.07a1.4 1.4 0 001.28.84h.14a1.7 1.7 0 110 3.4h-.07a1.4 1.4 0 00-1.28.84z" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Settings Panel -->
+    <section id="settings-panel" class="hidden">
+      <div class="settings-group">
+        <label for="select-provider">Provider AI</label>
+        <select id="select-provider">
+          <option value="anthropic">Anthropic Claude</option>
+          <option value="openai">OpenAI GPT</option>
+          <option value="gemini">Google Gemini</option>
+        </select>
+      </div>
+
+      <div class="settings-group">
+        <label for="input-api-key">Klucz API</label>
+        <div class="input-row">
+          <input type="password" id="input-api-key" placeholder="sk-ant-... (z console.anthropic.com)" autocomplete="off"/>
+          <button id="btn-toggle-key" class="icon-btn small" title="Pokaż/ukryj">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <label for="select-model">Model</label>
+        <select id="select-model"></select>
+      </div>
+
+      <div class="settings-group">
+        <div class="label-row">
+          <label for="textarea-system">Instrukcje systemowe</label>
+          <button id="btn-reset-system" class="link-btn" title="Przywróć domyślne">reset</button>
+        </div>
+        <textarea id="textarea-system" rows="5" placeholder="Bazowe instrukcje dla AI — jak ma się zachowywać, co pisać, czego unikać."></textarea>
+      </div>
+
+      <div class="settings-group">
+        <label for="textarea-style">Twój styl pisania (opcjonalne)</label>
+        <textarea id="textarea-style" rows="3" placeholder="np. Pisz jak Marcin — zwięźle, bez corporate-speaku. Podpisuj się '-- Marcin'."></textarea>
+      </div>
+
+      <button id="btn-save-settings" class="btn btn-secondary full-width">Zapisz ustawienia</button>
+
+      <div class="api-links">
+        Klucze API:
+        <a href="https://console.anthropic.com/settings/keys" target="_blank">Anthropic</a> |
+        <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI</a> |
+        <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a>
+      </div>
+    </section>
+
+    <!-- No API Key Warning -->
+    <section id="no-key-warning" class="hidden">
+      <div class="warning-box">
+        <p>Aby rozpocząć, wklej klucz API wybranego providera w ustawieniach.</p>
+        <button id="btn-open-settings" class="btn btn-primary">Otwórz ustawienia</button>
+      </div>
+    </section>
+
+    <!-- Main Panel -->
+    <section id="main-panel" class="hidden">
+      <div class="settings-group">
+        <label for="textarea-context">Dodatkowe instrukcje (opcjonalne)</label>
+        <textarea id="textarea-context" rows="2" placeholder="np. Odmów uprzejmie / Odpowiedz krótko / Zaproponuj termin spotkania"></textarea>
+      </div>
+
+      <button id="btn-generate" class="btn btn-primary full-width">
+        <span id="btn-generate-text">Wygeneruj odpowiedź</span>
+        <span id="btn-generate-spinner" class="spinner hidden"></span>
+      </button>
+
+      <!-- Response Area -->
+      <div id="response-area" class="hidden">
+        <label>Wygenerowana odpowiedź</label>
+        <div id="response-text" class="response-box"></div>
+        <div class="action-row">
+          <button id="btn-copy" class="btn btn-secondary">Kopiuj</button>
+          <button id="btn-insert" class="btn btn-primary">Wstaw do odpowiedzi</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Error Display -->
+    <div id="error-bar" class="hidden"></div>
+  </div>
+</body>
+</html>

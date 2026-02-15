@@ -1,0 +1,22 @@
+{
+  "name": "ai-mail-assistant",
+  "version": "2.0.0",
+  "description": "Outlook Add-in — AI email response generator (Claude, GPT, Gemini)",
+  "homepage": "https://GITHUB_USERNAME.github.io/ai-mail-assistant/",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "postinstall": "node scripts/generate-icons.js",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
