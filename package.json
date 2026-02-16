@@ -2,7 +2,7 @@
   "name": "Outlook_Claude_Plugin",
   "version": "2.0.0",
   "description": "Outlook Add-in — AI email response generator (Claude, GPT, Gemini)",
-  "homepage": "https://malipie.github.io/Outlook_Claude_Plugin/",
+  "homepage": "https://ai-mail-assistant.pages.dev/",
   "private": true,
   "scripts": {
     "dev": "webpack serve --mode development",
