@@ -1,4 +1,7 @@
 {
   "name": "ai-mail-assistant",
-  "pages_build_output_dir": "./dist"
+  "compatibility_date": "2026-02-01",
+  "assets": {
+    "directory": "./dist"
+  }
 }
