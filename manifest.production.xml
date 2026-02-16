@@ -11,12 +11,12 @@
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="AI Mail Assistant"/>
     <Description DefaultValue="Generate email replies using AI (Claude, GPT, Gemini) in your personal writing style"/>
-    <IconUrl DefaultValue="https://ai-mail-assistant.pages.dev/assets/icon-64.png"/>
-    <HighResolutionIconUrl DefaultValue="https://ai-mail-assistant.pages.dev/assets/icon-128.png"/>
+    <IconUrl DefaultValue="https://ai-mail-assistant.marcin-lipiec-216.workers.dev/assets/icon-64.png"/>
+    <HighResolutionIconUrl DefaultValue="https://ai-mail-assistant.marcin-lipiec-216.workers.dev/assets/icon-128.png"/>
     <SupportUrl DefaultValue="https://github.com/malipie/Outlook_Claude_Plugin"/>
 
     <AppDomains>
-        <AppDomain>https://ai-mail-assistant.pages.dev</AppDomain>
+        <AppDomain>https://ai-mail-assistant.marcin-lipiec-216.workers.dev</AppDomain>
     </AppDomains>
 
     <Hosts>
@@ -32,7 +32,7 @@
     <FormSettings>
         <Form xsi:type="ItemRead">
             <DesktopSettings>
-                <SourceLocation DefaultValue="https://ai-mail-assistant.pages.dev/taskpane.html"/>
+                <SourceLocation DefaultValue="https://ai-mail-assistant.marcin-lipiec-216.workers.dev/taskpane.html"/>
                 <RequestedHeight>450</RequestedHeight>
             </DesktopSettings>
         </Form>
@@ -101,12 +101,12 @@
 
             <Resources>
                 <bt:Images>
-                    <bt:Image id="icon16" DefaultValue="https://ai-mail-assistant.pages.dev/assets/icon-16.png"/>
-                    <bt:Image id="icon32" DefaultValue="https://ai-mail-assistant.pages.dev/assets/icon-32.png"/>
-                    <bt:Image id="icon80" DefaultValue="https://ai-mail-assistant.pages.dev/assets/icon-80.png"/>
+                    <bt:Image id="icon16" DefaultValue="https://ai-mail-assistant.marcin-lipiec-216.workers.dev/assets/icon-16.png"/>
+                    <bt:Image id="icon32" DefaultValue="https://ai-mail-assistant.marcin-lipiec-216.workers.dev/assets/icon-32.png"/>
+                    <bt:Image id="icon80" DefaultValue="https://ai-mail-assistant.marcin-lipiec-216.workers.dev/assets/icon-80.png"/>
                 </bt:Images>
                 <bt:Urls>
-                    <bt:Url id="taskpaneUrl" DefaultValue="https://ai-mail-assistant.pages.dev/taskpane.html"/>
+                    <bt:Url id="taskpaneUrl" DefaultValue="https://ai-mail-assistant.marcin-lipiec-216.workers.dev/taskpane.html"/>
                 </bt:Urls>
                 <bt:ShortStrings>
                     <bt:String id="groupLabel" DefaultValue="AI Mail"/>
